@@ -641,6 +641,14 @@ window.addEventListener("resize", () => {
     });
   });
 
+ $(document).ready(function () {
+    $(".shopping-platforms").ripples({
+      resolution: 512,   // Higher = smoother
+      dropRadius: 20,    // Ripple size
+      perturbance: 0.04, // Wave speed
+    });
+  });
+
 
 //   partical
 
