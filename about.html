@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - FlexFive Home Care | Premium Home Care Products Manufacturer</title>
+    <meta name="description" content="Learn about FlexFive Home Care's journey, vision, mission, and commitment to providing premium quality home care liquid products to global markets.">
+    <meta name="keywords" content="about FlexFive, home care manufacturer, company history, vision mission, certifications, ISO, MSME">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <style>
+        
+        /* Additional styles for About page */
+        .page-hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, rgba(30, 144, 255, 0.1), rgba(168, 225, 12, 0.1));
+            text-align: center;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--primary-blue), var(--accent-green));
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin: 3rem 0;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 0;
+            margin-right: 50%;
+            padding-right: 3rem;
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 50%;
+            margin-right: 0;
+            padding-left: 3rem;
+            text-align: left;
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-blue);
+            border: 4px solid white;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 0 4px var(--primary-blue);
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .timeline-year {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+        
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .certification-badge {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .certification-badge:hover {
+            transform: translateY(-5px);
+        }
+        
+        .certification-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .value-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-green));
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .value-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 50px;
+                margin-right: 0;
+                padding-left: 2rem;
+                padding-right: 1rem;
+                text-align: left;
+            }
+            
+            .timeline-marker {
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="https://wa.me/9180000 55772" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    <div id="cursor"></div>
+<div id="cursor-border"></div>
+
+    <!-- Header -->
+    <header class="header">
+   
+
+        <div class="center-section">
+             <div class="social-icons">
+          <a href="https://www.instagram.com/flexfives.homecare/"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61575142651036"><i class="fab fa-facebook"></i></a>
+        </div>
+          <nav class="nav-links">
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT US</a>
+            <a href="products.html">PRODUCTS</a>
+          </nav>
+          
+          <!-- <div class="logo"><a href="index.html">FLEXFIVE</a></div> -->
+      <div class="logo"><a href="index.html"><img src="https://res.cloudinary.com/dyvimqbic/image/upload/v1754563246/PRAVESIYA_6_if1otb.png" alt=""></a></div>
+    
+          <nav class="nav-links">
+            <a href="why-us.html">WHY US</a>
+            <a href="Blog.html">BLOG</a>
+            <a href="contact.html">CONTACT</a>
+          </nav>
+             <div class="menu-button">
+          <i class="fa-solid fa-grip-lines"></i>
+        </div>
+        <div class="center-section2">
+             <nav class="nav-links">
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT US</a>
+            <a href="products.html">PRODUCTS</a>
+            <a href="why-us.html">WHY US</a>
+            <a href="Blog.html">BLOG</a>
+            <a href="contact.html">CONTACT</a>
+          </nav>
+          </nav>
+        </div>
+        </div>
+    
+     
+      </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="fade-in">About FlexFive Home Care</h1>
+            <p class="hero-tagline fade-in">Your Trusted Partner in Home Hygiene Excellence</p>
+        </div>
+    </section>
+
+    <!-- Company Overview -->
+    <section class="section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <div class="section-subtitle">Our Story</div>
+                    <h2>Building Trust Through Quality</h2>
+                    <p>
+                       FlexFive Home Care began with a clear and purposeful mission: to deliver high-quality home care solutions that simplify everyday cleaning while being safe, effective, and environmentally conscious. What started as a modest manufacturing setup has now grown into a globally trusted brand, proudly serving households in over 33 countries.
+                    </p>
+                    <p>
+                     Every product we create is a reflection of our commitment to excellence. With advanced production facilities and strict quality control at every stage, we ensure that each drop delivers reliable performance and meets the highest international standards.
+                    </p>
+                </div>
+                <div class="about-image fade-in">
+                    <img src="images/home_care_products_3.jpg" alt="FlexFive Manufacturing Facility">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission -->
+    <section class="section" style="background: var(--light-gray);">
+        <div class="container">
+            <div class="values-grid">
+                <div class="value-card scale-in">
+                    <div class="value-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>
+                       To be recognized as a reliable and responsible brand in home care, known for consistency, thoughtful innovation, and customer-first products that make everyday life better.
+                    </p>
+                </div>
+                
+                <div class="value-card scale-in">
+                    <div class="value-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>
+                    To create home care products that are safe, effective, and easy to trust — built through hands-on research, mindful practices, and constant improvement based on real feedback.
+                    </p>
+                </div>
+                
+                <div class="value-card scale-in">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Our Values</h3>
+                    <p>
+                        We believe in honesty, effort, and improvement. Our work is guided by customer trust, sustainable choices, and a promise to grow with purpose and integrity.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Company Timeline -->
+
+    <!-- <section class="section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <div class="section-subtitle">Our Journey</div>
+                <h2>Growth Through Innovation</h2>
+                <p>Discover the milestones that have shaped FlexFive into the trusted brand it is today.</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2015</div>
+                        <div class="timeline-title">Foundation</div>
+                        <p>FlexFive Home Care was established with a vision to create premium home care products for the Indian market.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2017</div>
+                        <div class="timeline-title">First Export</div>
+                        <p>Successfully launched our first international export to Southeast Asian markets, marking our global expansion.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2019</div>
+                        <div class="timeline-title">ISO Certification</div>
+                        <p>Achieved ISO 9001:2015 certification, reinforcing our commitment to quality management systems.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2021</div>
+                        <div class="timeline-title">Global Reach</div>
+                        <p>Expanded to 25+ countries and launched our eco-friendly product line with biodegradable formulations.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2023</div>
+                        <div class="timeline-title">Innovation Hub</div>
+                        <p>Established our R&D center and launched advanced formulations with enhanced cleaning power and skin safety.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2024</div>
+                        <div class="timeline-title">Market Leadership</div>
+                        <p>Reached 33+ countries with 50+ product SKUs and established partnerships with 1500+ distributors worldwide.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Certifications -->
+    <section class="section" style="background: var(--light-gray);">
+        <div class="container">
+            <div class="section-title fade-in">
+                <div class="section-subtitle">Quality Assurance</div>
+                <h2>Built on Trust, Driven by Standards</h2>
+                <p>Our commitment to quality isn’t defined by certifications — it’s proven through performance, consistency, and customer satisfaction. Every product goes through a detailed internal check process to ensure it meets our high expectations.</p>
+            </div>
+            
+            <div class="certifications">
+                <div class="certification-badge scale-in">
+                    <div class="certification-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>In-House Quality Checks</h3>
+                    <p>Every batch is inspected by our team to ensure consistency, safety, and performance.</p>
+                </div>
+                
+                <div class="certification-badge scale-in">
+                    <div class="certification-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Eco-Aware Process</h3>
+                    <p>We follow environmentally conscious practices and aim for reduced waste in packaging and production.</p>
+                </div>
+                
+                <div class="certification-badge scale-in">
+                    <div class="certification-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Tested & Verified</h3>
+                    <p>All our products are field-tested and refined based on real user feedback and ongoing improvements.</p>
+                </div>
+                
+                <div class="certification-badge scale-in">
+                    <div class="certification-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Customer-First Approach</h3>
+                    <p>Our quality promise is backed by responsive support and a satisfaction-first philosophy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team & Culture -->
+    <section class="section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image fade-in">
+                    <img src="images/laundry_detergent_1.jpg" alt="FlexFive Team">
+                </div>
+                <div class="about-text fade-in">
+                    <div class="section-subtitle">Our Team</div>
+                    <h2>Passionate People, Exceptional Results</h2>
+                    <p>
+                        At FlexFive, our people are our power. Behind every product is a team of dedicated experts committed to innovation, precision, and customer satisfaction. From lab to doorstep, we ensure every step meets the highest standards.
+                    </p>
+                    <ul class="features-list">
+                        <li>Research & Development team with 7–8 years of proven expertise</li>
+                        <li>Dedicated quality control specialists ensuring consistent standards</li>
+                        <li>Skilled manufacturing professionals focused on precision</li>
+                        <li>Friendly, customer-first sales and support team</li>
+                        <li>Ongoing training to stay sharp and deliver our best</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Ready to Partner with FlexFive?</h2>
+                <p>Join thousands of satisfied customers worldwide who trust FlexFive for their home care needs.</p>
+                <div style="margin-top: 2rem;">
+                    <a href="contact.html" class="btn btn-primary">Contact Us Today</a>
+                    <a href="products.html" class="btn btn-secondary">Explore Products</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FlexFive Home Care</h3>
+                    <p>Premium home care liquid products manufacturer and exporter. Cleansing the world, one drop at a time.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61575142651036" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/flexfives.homecare/" class="social-link"><i class="fab fa-instagram"></i></a>
+                       <!-- <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a> -->
+                        <!-- <a href="#" class="social-link"><i class="fab fa-twitter"></i></a> -->
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="about.html">About Us</a></p>
+                    <p><a href="products.html">Products</a></p>
+                    <p><a href="why-us.html">Why Choose Us</a></p>
+                    <p><a href="contact.html">Contact</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Products</h3>
+                    <p><a href="products/laundry-liquid.html">Laundry Detergent</a></p>
+                    <p><a href="products/dish-wash.html">Dish Wash Liquid</a></p>
+                    <p><a href="products/toilet-cleaner.html">Toilet Cleaner</a></p>
+                    <p><a href="products/floor-cleaner.html">Floor Cleaner</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-envelope"></i>   info.flexfive@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Surat, Gujarat, India</p>
+                    <p><i class="fab fa-whatsapp"></i> WhatsApp: +91 98765 43210</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 FlexFive Home Care. All rights reserved. | Made in India</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Custom JavaScript -->
+    
+    <script src="js/main.js"></script>
+    <script>
+        // Timeline animation
+        gsap.registerPlugin(ScrollTrigger);
+        
+        gsap.utils.toArray('.timeline-item').forEach((item, index) => {
+            gsap.to(item, {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                delay: index * 0.2,
+                scrollTrigger: {
+                    trigger: item,
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+        });
+    </script>
+    <script>
+// Show/hide back-to-top button on scroll
+window.addEventListener("scroll", function () {
+  const button = document.getElementById("backToTop");
+  if (window.scrollY > 300) {
+    button.style.display = "block";
+  } else {
+    button.style.display = "none";
+  }
+});
+
+// Scroll to top on button click
+document.getElementById("backToTop").addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+</script>
+     <script>
+            
+const cursor = document.querySelector("#cursor");
+const cursorBorder = document.querySelector("#cursor-border");
+const cursorPos = { x: 0, y: 0 };
+const cursorBorderPos = { x: 0, y: 0 };
+
+document.addEventListener("mousemove", (e) => {
+  cursorPos.x = e.clientX;
+  cursorPos.y = e.clientY;
+
+  cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+});
+
+requestAnimationFrame(function loop() {
+  const easting = 8;
+  cursorBorderPos.x += (cursorPos.x - cursorBorderPos.x) / easting;
+  cursorBorderPos.y += (cursorPos.y - cursorBorderPos.y) / easting;
+
+  cursorBorder.style.transform = `translate(${cursorBorderPos.x}px, ${cursorBorderPos.y}px)`;
+  requestAnimationFrame(loop);
+});
+
+document.querySelectorAll("[data-cursor]").forEach((item) => {
+  item.addEventListener("mouseover", (e) => {
+    if (item.dataset.cursor === "pointer") {
+      cursorBorder.style.backgroundColor = "rgba(255, 255, 255, .6)";
+      cursorBorder.style.setProperty("--size", "30px");
+    }
+    if (item.dataset.cursor === "pointer2") {
+      cursorBorder.style.backgroundColor = "white";
+      cursorBorder.style.mixBlendMode = "difference";
+      cursorBorder.style.setProperty("--size", "80px");
+    }
+  });
+  item.addEventListener("mouseout", (e) => {
+    cursorBorder.style.backgroundColor = "unset";
+    cursorBorder.style.mixBlendMode = "unset";
+    cursorBorder.style.setProperty("--size", "50px");
+  });
+});
+
+        </script>
+
+<script>
+    const menuBtn = document.querySelector('.menu-button');
+    const navLinks = document.querySelectorAll('.nav-links');
+  
+    menuBtn.addEventListener('click', () => {
+      navLinks.forEach(nav => nav.classList.toggle('active'));
+    });
+  </script>
+</body>
+</html>
+

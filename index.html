@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexFive Home Care - Cleansing the World, One Drop at a Time</title>
+    <meta name="description" content="FlexFive Home Care exports premium quality home care liquid products including laundry detergent, dish wash liquid, toilet cleaner, floor cleaner, and tyre polish to global markets.">
+    <meta name="keywords" content="home care products, laundry detergent, dish wash liquid, toilet cleaner, floor cleaner, tyre polish, export, India, premium quality">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.ripples/dist/jquery.ripples.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a href="https://wa.me/9180000 55772" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <div id="cursor"></div>
+    <div id="cursor-border"></div>
+    
+    <!-- Header -->
+    <!-- <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">FF</div>
+                FlexFive
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="why-us.html" class="nav-link">Why Choose Us</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header> -->
+    
+    <header class="header">
+        
+        
+        <div class="center-section">
+            <div class="social-icons">
+                <a href="https://www.instagram.com/flexfives.homecare/"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61575142651036"><i class="fab fa-facebook"></i></a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">HOME</a>
+                <a href="about.html">ABOUT US</a>
+                <a href="products.html">PRODUCTS</a>
+            </nav>
+            
+            <!-- <div class="logo"><a href="index.html">FLEXFIVE</a></div> -->
+            <div class="logo"><a href="index.html"><img src="https://res.cloudinary.com/dyvimqbic/image/upload/v1754563246/PRAVESIYA_6_if1otb.png" alt=""></a></div>
+            
+            <nav class="nav-links">
+                <a href="why-us.html">WHY US</a>
+                <a href="Blog.html">BLOG</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+            <div class="menu-button">
+                <i class="fa-solid fa-grip-lines"></i>
+            </div>
+    <div class="center-section2">
+         <nav class="nav-links">
+             <a href="index.html">HOME</a>
+             <a href="about.html">ABOUT US</a>
+             <a href="products.html">PRODUCTS</a>
+        <a href="why-us.html">WHY US</a>
+        <a href="Blog.html">BLOG</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+</nav>
+</div>
+</div>
+
+
+</header>
+
+<!-- Hero Section -->
+<section class="hero relative ">
+
+    <div class="particles-js"></div>
+    <!-- Canvas Effects -->
+    <canvas id="particleCanvas" class="absolute inset-0"></canvas>
+    <canvas id="ripple-canvas" class="absolute inset-0"></canvas>
+
+    <!-- Video Background -->
+    <video autoplay muted loop playsinline class="hero-video absolute inset-0 w-full h-full object-cover">
+        <source src="https://res.cloudinary.com/dnt52iypu/video/upload/v1755449293/6531f9a7-7986-4d94-ab87-83b2d91c164c.mp4_fmails.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+    <!-- Hero Content -->
+    <div class="container relative z-10">
+        <div class="hero-content">
+            <div class="hero-text text-center text-white">
+                <h1 class="hero-title">FlexFive</h1>
+                <h2>Premium Home Care Solutions</h2>
+                <p class="hero-tagline">Cleansing the World, One Drop at a Time</p>
+                <p class="hero-description">
+                    FlexFive Home Care is a leading manufacturer and exporter of premium quality home care liquid products. 
+                    From laundry detergents to floor cleaners, we deliver excellence in every drop, ensuring your home stays 
+                    clean, fresh, and healthy.
+                </p>
+                <div class="hero-buttons mt-4">
+                    <a href="products.html" class="btn btn-primary">Explore Products</a>
+                    <a href="#" class="btn btn-secondary">Download Catalog</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- About FlexFive Section -->
+    <section class="section about-preview">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <div class="section-subtitle">About FlexFive</div>
+                    <h2>Your Trusted Home Hygiene Partner</h2>
+                    <p>
+                        With years of expertise in manufacturing premium home care products, FlexFive has established 
+                        itself as a trusted name in the industry. We combine traditional knowledge with modern technology 
+                        to create products that are gentle yet effective.
+                    </p>
+                    <ul class="features-list">
+                        <li>Gentle yet effective formulations</li>
+                        <li>Available in 33+ countries worldwide</li>
+                        <li>Made in India with global quality standards</li>
+                        <li>Eco-friendly and skin-safe ingredients</li>
+                    </ul>
+
+                    
+            
+                    <a href="about.html" class="btn btn-primary">Learn More About Us</a>
+                </div>
+                <div class="about-image fade-in">
+                    <img src="images/home_care_products_2.jpg" alt="About FlexFive Home Care">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Usage Categories Section -->
+<section class="section product-categories">
+    <div class="container">
+        <div class="section-title fade-in">
+            <div class="section-subtitle">Explore By Use</div>
+            <h2>Tailored for Every Need</h2>
+            <p>Whether it’s for large-scale industrial operations or daily household care, our products are designed to deliver performance and quality.</p>
+        </div>
+
+        <div class="usage-boxes">
+            <div class="usage-card fade-in ">
+              <a href="./products/industrial-use.html">  <img src="https://res.cloudinary.com/dyvimqbic/image/upload/v1754552076/istockphoto-875237128-612x612_qcnto3.jpg" alt="Industrial Use Products"></a>
+                <h3>Industrial Use</h3>
+                <p>Heavy-duty cleaning solutions formulated for factories, hospitality, institutions, and large-scale operations.</p>
+                <a href="./products/industrial-use.html" class="btn btn-primary">Explore Industrial</a>
+            </div>
+
+            <div class="usage-card fade-in">
+               <a href="./products/home-care.html"><img src="https://res.cloudinary.com/dyvimqbic/image/upload/v1754552076/GettyImages-1328423673-f66c0334a2784141a314d375d8f3516f_ksyq13.webp" alt="Home Care Products"></a> 
+                <h3>Home Care Use</h3>
+                <p>Gentle and effective formulations made for everyday cleaning to keep your home safe, fresh, and sparkling clean.</p>
+                <a href="./products/home-care.html" class="btn btn-secondary">Explore Home Care</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Product Categories Section -->
+    <section class="section products-preview" style="background: var(--light-gray);">
+        <div class="container">
+            <div class="section-title fade-in">
+                <div class="section-subtitle">Our Products</div>
+                <h2>Complete Home Care Solutions</h2>
+                <p>Discover our comprehensive range of premium home care liquid products designed for every cleaning need.</p>
+            </div>
+            
+            <div class="product-grid">
+                <div class="product-card scale-in">
+                    <div class="product-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Laundry Care</h3>
+                    <p>Premium laundry detergent liquids that provide deep cleaning while being gentle on fabrics and skin.</p>
+                    <a href="products/laundry-liquid.html" class="btn btn-secondary">View Details</a>
+                </div>
+                
+                <div class="product-card scale-in">
+                    <div class="product-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Kitchen Care</h3>
+                    <p>Effective dish wash liquids that cut through grease and grime while keeping your hands soft.</p>
+                    <a href="products/dish-wash.html" class="btn btn-secondary">View Details</a>
+                </div>
+                
+                <div class="product-card scale-in">
+                    <div class="product-icon">
+                        <i class="fas fa-toilet"></i>
+                    </div>
+                    <h3>Bathroom Care</h3>
+                    <p>Powerful toilet and bathroom cleaners that eliminate germs and leave a fresh, clean scent.</p>
+                    <a href="products/toilet-cleaner.html" class="btn btn-secondary">View Details</a>
+                </div>
+                
+                <div class="product-card scale-in">
+                    <div class="product-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Floor Care</h3>
+                    <p>Advanced floor cleaners suitable for all types of flooring, providing streak-free shine.</p>
+                    <a href="products/floor-cleaner.html" class="btn btn-secondary">View Details</a>
+                </div>
+                
+                <div class="product-card scale-in">
+                    <div class="product-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Car Care</h3>
+                    <p>Professional-grade tyre polish and car care products for maintaining your vehicle's appearance.</p>
+                    <a href="products/tyre-polish.html" class="btn btn-secondary">View Details</a>
+                </div>
+                
+                <div class="product-card scale-in">
+                    <div class="product-icon">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <h3>View All Products</h3>
+                    <p>Explore our complete range of home care solutions designed for modern households.</p>
+                    <a href="products.html" class="btn btn-primary">See All Products</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section stats">
+        <div class="container">
+            <div class="section-title fade-in">
+                <div class="section-subtitle">Our Achievements</div>
+                <h2>Numbers That Speak for Themselves</h2>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <span class="stat-number" data-count="50">0</span>
+                    <span class="stat-label">Product SKUs</span>
+                </div>
+                <div class="stat-item fade-in">
+                    <span class="stat-number" data-count="33">0</span>
+                    <span class="stat-label">Countries Served</span>
+                </div>
+                <div class="stat-item fade-in">
+                    <span class="stat-number" data-count="1500">0</span>
+                    <span class="stat-label">Distributors</span>
+                </div>
+                <div class="stat-item fade-in">
+                    <span class="stat-number" data-count="150000">0</span>
+                    <span class="stat-label">Retailers</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Ready to Partner with FlexFive?</h2>
+                <p>Join thousands of satisfied customers worldwide who trust FlexFive for their home care needs.</p>
+                <div style="margin-top: 2rem;">
+                    <a href="contact.html" class="btn btn-primary">Contact Us Today</a>
+                    <a href="why-us.html" class="btn btn-secondary">Why Choose Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FlexFive Home Care</h3>
+                    <p>Premium home care liquid products manufacturer and exporter. Cleansing the world, one drop at a time.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61575142651036" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/flexfives.homecare/" class="social-link"><i class="fab fa-instagram"></i></a>
+
+                       <!-- <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a> -->
+                        <!-- <a href="#" class="social-link"><i class="fab fa-twitter"></i></a> -->
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="about.html">About Us</a></p>
+                    <p><a href="products.html">Products</a></p>
+                    <p><a href="why-us.html">Why Choose Us</a></p>
+                    <p><a href="contact.html">Contact</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Products</h3>
+                    <p><a href="products/laundry-liquid.html">Laundry Detergent</a></p>
+                    <p><a href="products/dish-wash.html">Dish Wash Liquid</a></p>
+                    <p><a href="products/toilet-cleaner.html">Toilet Cleaner</a></p>
+                    <p><a href="products/floor-cleaner.html">Floor Cleaner</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-envelope"></i>  info.flexfive@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Surat, Gujarat, India</p>
+                    <p><i class="fab fa-whatsapp"></i> WhatsApp: +91 98765 43210</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 FlexFive Home Care. All rights reserved. | Made in India</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+        <script>
+// Show/hide back-to-top button on scroll
+window.addEventListener("scroll", function () {
+  const button = document.getElementById("backToTop");
+  if (window.scrollY > 300) {
+    button.style.display = "block";
+  } else {
+    button.style.display = "none";
+  }
+});
+
+// Scroll to top on button click
+document.getElementById("backToTop").addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
+</script>
+<script>
+  const menuBtn = document.querySelector('.menu-button');
+  const navLinks = document.querySelectorAll('.nav-links');
+
+  menuBtn.addEventListener('click', () => {
+    navLinks.forEach(nav => nav.classList.toggle('active'));
+  });
+</script>
+<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib --> <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+</body>
+</html>
+

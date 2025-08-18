@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundry Detergent Liquid - FlexFive Home Care | Premium Laundry Care</title>
+    <meta name="description" content="FlexFive Premium Laundry Detergent Liquid - Deep cleaning power, gentle on fabrics and skin. Available in 500ml, 1L, and 5L sizes. Export quality guaranteed.">
+    <meta name="keywords" content="laundry detergent liquid, premium laundry care, fabric care, gentle detergent, concentrated formula, export quality">
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <style>
+        /* cursor  */
+
+#cursor {
+  position: fixed;
+  top: -5px;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  background-color: #A8E10C;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999;
+}
+
+#cursor-border {
+  --size: 50px;
+  position: fixed;
+  top: calc(var(--size) / -2);
+  left: calc(var(--size) / -2);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px #00B4D8;
+  pointer-events: none;
+  transition: top 0.15s ease-out, left 0.15s ease-out, width 0.15s ease-out,
+    height 0.15s ease-out, background-color 0.15s ease-out;
+  z-index: 999;
+}
+        /* Product page specific styles */
+        .product-hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, rgba(30, 144, 255, 0.1), rgba(168, 225, 12, 0.1));
+        }
+        
+        .product-main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+            margin-bottom: 4rem;
+        }
+        
+        .product-image {
+            position: sticky;
+            top: 100px;
+        }
+        
+        .product-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+        
+        .product-info h1 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+        
+        .product-tagline {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+        
+        .product-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        
+        .product-highlights {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+        
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .highlight-item {
+            text-align: center;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .highlight-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .sizes-section {
+            margin: 3rem 0;
+        }
+        
+        .sizes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .size-card {
+            background: white;
+            padding: 2rem 1rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+        
+        .size-card:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-5px);
+        }
+        
+        .size-volume {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            display: block;
+        }
+        
+        .size-label {
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+        
+        .ingredients-section {
+            background: var(--light-gray);
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+        }
+        
+        .ingredients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .ingredient-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .ingredient-category h4 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .breadcrumb {
+            padding: 1rem 0;
+            color: var(--text-light);
+        }
+        
+        .breadcrumb a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .product-main {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .product-image {
+                position: static;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="https://wa.me/9180000 55772" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    <div id="cursor"></div>
+<div id="cursor-border"></div>
+    <!-- Header -->
+  <header class="header">
+    <div class="social-icons">
+      <a href="https://www.instagram.com/flexfives.homecare/"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61575142651036"><i class="fab fa-facebook"></i></a>
+    </div>
+
+    <div class="center-section">
+      <nav class="nav-links">
+        <a href="../index.html">HOME</a>
+        <a href="../about.html">ABOUT US</a>
+        <a href="../products.html">PRODUCTS</a>
+      </nav>
+      
+      <!-- <div class="logo"><a href="index.html">FLEXFIVE</a></div> -->
+  <div class="logo"><a href="../index.html"><img src="https://res.cloudinary.com/dyvimqbic/image/upload/v1754563246/PRAVESIYA_6_if1otb.png" alt=""></a></div>
+
+      <nav class="nav-links">
+        <a href="../why-us.html">WHY US</a>
+        <a href="../Blog.html">BLOG</a>
+        <a href="../contact.html">CONTACT</a>
+      </nav>
+    </div>
+
+    <div class="menu-button">
+      <i class="fas fa-ellipsis-v"></i>
+    </div>
+  </header>
+
+<!-- Breadcrumb --> 
+<section class="product-hero">
+    <div class="container">
+        <div class="breadcrumb fade-in">
+            <a href="../index.html">Home</a> / <a href="../products.html">Products</a> / Floor Cleaner
+        </div>
+    </div>
+</section>
+
+<!-- Product Main Section -->
+<section class="section">
+    <div class="container">
+        <div class="product-main">
+            <div class="product-image fade-in">
+                <img src="https://res.cloudinary.com/dnt52iypu/image/upload/v1755196849/4_snagbb.png" alt="FlexFive Floor Cleaner">
+            </div>
+
+            <div class="product-info fade-in">
+                <h1>FlexFive Floor Cleaner</h1>
+                <p class="product-tagline">Multi-Surface Cleaning & Germ Protection</p>
+
+                <div class="product-description">
+                    <p>
+                        FlexFive Floor Cleaner is designed to clean and disinfect all types of floor surfaces with ease. 
+                        Its powerful formula removes dirt, grime, and stains while killing 99.9% of germs. 
+                        It leaves behind a fresh, long-lasting fragrance and a visibly clean surface.
+                    </p>
+                    <p>
+                        Ideal for use on tiles, marble, granite, and ceramic floors. 
+                        Suitable for both residential and commercial spaces.
+                    </p>
+                </div>
+
+                <div class="cta-buttons">
+                    <a href="../contact.html" class="btn btn-primary1">Request Quote</a>
+                    <a href="../images/FlexFive_MSDS_Master_Template.pdf" class="btn btn-secondary">Download MSDS</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Product Highlights -->
+<section class="section" style="background: var(--light-gray);">
+    <div class="container">
+        <div class="product-highlights fade-in">
+            <h3>Key Features & Benefits</h3>
+            <div class="highlight-grid">
+                <div class="highlight-item scale-in">
+                    <div class="highlight-icon">
+                        <i class="fas fa-pump-soap"></i>
+                    </div>
+                    <h4>99.9% Germ Protection</h4>
+                    <p>Powerful disinfecting agents ensure hygienic floors</p>
+                </div>
+
+                <div class="highlight-item scale-in">
+                    <div class="highlight-icon">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <h4>Stain & Dirt Removal</h4>
+                    <p>Removes sticky stains, spills, and muddy footprints</p>
+                </div>
+
+                <div class="highlight-item scale-in">
+                    <div class="highlight-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h4>Fresh Fragrance</h4>
+                    <p>Leaves behind a pleasant citrus or floral scent</p>
+                </div>
+
+                <div class="highlight-item scale-in">
+                    <div class="highlight-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h4>No Sticky Residue</h4>
+                    <p>Dries quickly without leaving any streaks or film</p>
+                </div>
+
+                <div class="highlight-item scale-in">
+                    <div class="highlight-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h4>Safe on All Surfaces</h4>
+                    <p>Use on marble, tiles, granite, vitrified, and ceramic floors</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Available Sizes -->
+<section class="section">
+    <div class="container">
+        <div class="sizes-section fade-in">
+            <h3>Available Sizes</h3>
+            <p>Choose from various sizes to meet your specific needs, from household use to commercial applications.</p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-item fade-in">
+                <span class="stat-number">1L</span>
+                <span class="stat-label">Family Size</span>
+            </div>
+            <div class="stat-item fade-in">
+                <span class="stat-number">5L</span>
+                <span class="stat-label">Bulk Pack</span>
+            </div>
+            <div class="stat-item fade-in">
+                <span class="stat-number">10L</span>
+                <span class="stat-label">Commercial Use</span>
+            </div>
+            <div class="stat-item fade-in">
+                <span class="stat-number">Custom</span>
+                <span class="stat-label">OEM Packaging</span>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Ingredients & Formulation -->
+<section class="section">
+    <div class="container">
+        <div class="ingredients-section fade-in">
+            <h3>Active Ingredients & Safe Formulation</h3>
+            <p>Specially crafted to ensure deep cleaning without damaging surfaces.</p>
+
+            <div class="ingredients-grid">
+                <div class="ingredient-category scale-in">
+                    <h4><i class="fas fa-flask"></i> Active Ingredients</h4>
+                    <ul class="features-list">
+                        <li>Disinfecting agents</li>
+                        <li>Surfactants for lifting dirt</li>
+                        <li>Stain dissolvers</li>
+                    </ul>
+                </div>
+
+                <div class="ingredient-category scale-in">
+                    <h4><i class="fas fa-leaf"></i> Safe Formula</h4>
+                    <ul class="features-list">
+                        <li>Non-toxic and biodegradable</li>
+                        <li>No harsh bleach or ammonia</li>
+                        <li>pH-balanced for regular use</li>
+                    </ul>
+                </div>
+
+                <div class="ingredient-category scale-in">
+                    <h4><i class="fas fa-check-circle"></i> Floor Friendly</h4>
+                    <ul class="features-list">
+                        <li>Non-corrosive on natural stone</li>
+                        <li>No color fading or dullness</li>
+                        <li>Maintains surface shine</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Usage Instructions -->
+<section class="section" style="background: var(--light-gray);">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-text fade-in">
+                <h3>Usage Instructions</h3>
+                <ul class="features-list">
+                    <li>Mix 15ml (1 cap) of floor cleaner in 4 liters of water for regular cleaning</li>
+                    <li>For tough stains, use undiluted on the area and scrub lightly</li>
+                    <li>Mop the floor as usual and let it air dry</li>
+                    <li>Do not rinse with water after mopping for best results</li>
+                    <li>Use daily or as needed for hygienic floors</li>
+                </ul>
+            </div>
+            <div class="about-image fade-in">
+                <img src="../images/floor_cleaner_2.jpg" alt="Floor Cleaner Usage">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Export Information -->
+<!-- <section class="section">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-image fade-in">
+                <img src="../images/floor_cleaner_3.jpg" alt="Export Ready Packaging">
+            </div>
+            <div class="about-text fade-in">
+                <h3>Export Ready Packaging</h3>
+                <p>
+                    FlexFive Floor Cleaner is export-ready with customizable packaging options. 
+                    We support private labeling, documentation, and international safety compliance.
+                </p>
+                <ul class="features-list">
+                    <li>High-quality HDPE or PET packaging</li>
+                    <li>MSDS, COA, and export documents available</li>
+                    <li>Private labeling and OEM services</li>
+                    <li>Multi-language packaging on request</li>
+                    <li>Bulk packing options for B2B clients</li>
+                </ul>
+                <div class="cta-buttons">
+                    <a href="../contact.html" class="btn btn-primary1">Request Export Quote</a>
+                    <a href="../why-us.html" class="btn btn-secondary">Why Choose FlexFive</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<!-- Related Products -->
+<section class="section" style="background: var(--light-gray);">
+    <div class="container">
+        <div class="section-title fade-in">
+            <h3>Related Products</h3>
+            <p>Discover more products to maintain a hygienic environment</p>
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card scale-in">
+                <div class="product-icon">
+                    <i class="fas fa-toilet"></i>
+                </div>
+                <h3>Toilet Cleaner</h3>
+                <p>Deep cleaning and germ-killing action for toilet bowls</p>
+                <a href="toilet-cleaner.html" class="btn btn-secondary">View Details</a>
+            </div>
+
+            <div class="product-card scale-in">
+                <div class="product-icon">
+                    <i class="fas fa-tshirt"></i>
+                </div>
+                <h3>Laundry Detergent</h3>
+                <p>Advanced stain removal and fabric care</p>
+                <a href="laundry-detergent.html" class="btn btn-secondary">View Details</a>
+            </div>
+
+            <div class="product-card scale-in">
+                <div class="product-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <h3>Dish Wash Liquid</h3>
+                <p>Grease-cutting formula for spotless utensils</p>
+                <a href="dish-wash.html" class="btn btn-secondary">View Details</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FlexFive Home Care</h3>
+                    <p>Premium home care liquid products manufacturer and exporter. Cleansing the world, one drop at a time.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="../about.html">About Us</a></p>
+                    <p><a href="../products.html">Products</a></p>
+                    <p><a href="../why-us.html">Why Choose Us</a></p>
+                    <p><a href="../contact.html">Contact</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Products</h3>
+                    <p><a href="laundry-liquid.html">Laundry Detergent</a></p>
+                    <p><a href="dish-wash.html">Dish Wash Liquid</a></p>
+                    <p><a href="toilet-cleaner.html">Toilet Cleaner</a></p>
+                    <p><a href="floor-cleaner.html">Floor Cleaner</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-envelope"></i> info@flexfivehomecare.com</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra, India</p>
+                    <p><i class="fab fa-whatsapp"></i> WhatsApp: +91 98765 43210</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 FlexFive Home Care. All rights reserved. | Made in India</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Custom JavaScript -->
+    <script src="../js/main.js"></script>
+      
+</body>
+</html>
+
