@@ -273,7 +273,7 @@ header{
 /* Base Styles */
 
 .header {
-      backdrop-filter: blur(10px);
+      /* backdrop-filter: blur(10px); */
   background-color: rgba(238, 238, 238, 0.2);
   border-bottom: 1px solid rgba(238, 238, 238, 0.3);
   display: flex;
