@@ -23,6 +23,8 @@ requestAnimationFrame(function loop() {
   requestAnimationFrame(loop);
 });
 
+// Cursor Pointer Main Banner ( Pointer Js )
+
 document.querySelectorAll("[data-cursor]").forEach((item) => {
   item.addEventListener("mouseover", (e) => {
     if (item.dataset.cursor === "pointer") {
@@ -59,7 +61,8 @@ document.addEventListener('DOMContentLoaded', function() {
 function initializeHeroAnimations() {
     const heroTimeline = gsap.timeline();
     
-    // Animate hero content on page load
+    // Floating Page Elements On Hero Page 
+
     heroTimeline
         .from('.hero-title', {
             opacity: 0,
@@ -225,6 +228,7 @@ function initializeAnimations() {
 }
 
 // Navigation functionality
+
 function initializeNavigation() {
     const header = document.querySelector('.header');
     const mobileToggle = document.querySelector('.mobile-menu-toggle');
